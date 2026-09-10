@@ -1,0 +1,6 @@
+# Robots.txt for Qhipa
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://credicorp-internal.github.io/brd-rimay-platform/sitemap.xml

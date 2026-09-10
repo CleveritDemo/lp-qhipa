@@ -1,0 +1,164 @@
+/* Landing demo — delegation wave block (mirrors app «Waiting N/M») */
+
+.demo-wave {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.demo-wave__prompt {
+  align-self: flex-end;
+  max-width: 80%;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+  text-align: right;
+  margin: 0;
+}
+
+.demo-wave__mass {
+  align-self: center;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  margin: 6px 0;
+}
+
+.demo-wave__mass-core {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 32%, #f49bd1 0%, #df50a9 55%, #8c2e6b 100%);
+  box-shadow: 0 0 26px rgba(223, 80, 169, 0.55);
+  animation: demo-wave-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes demo-wave-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-wave__mass-core {
+    animation: none;
+  }
+}
+
+.demo-wave__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.demo-wave__title {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.demo-wave__bar {
+  flex: 1;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.demo-wave__bar-fill {
+  display: block;
+  height: 100%;
+  background: #df50a9;
+  transition: width 0.4s ease;
+}
+
+.demo-wave__sub {
+  margin: 0;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.demo-wave__group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.demo-wave__group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.demo-wave__specialist {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.demo-wave__role {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.demo-wave__count {
+  margin-left: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.demo-wave__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 2px 0;
+  min-width: 0;
+}
+
+.demo-wave__row--done {
+  opacity: 0.78;
+}
+
+.demo-wave__row--running {
+  box-shadow: inset 2px 0 0 rgba(223, 80, 169, 0.55);
+  padding-left: 6px;
+}
+
+.demo-wave__dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.demo-wave__row--running .demo-wave__dot {
+  background: #df50a9;
+  box-shadow: 0 0 8px rgba(223, 80, 169, 0.45);
+}
+
+.demo-wave__row--done .demo-wave__dot {
+  background: rgba(104, 181, 194, 0.8);
+}
+
+.demo-wave__text {
+  font-size: 11px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.58);
+  overflow-wrap: anywhere;
+}

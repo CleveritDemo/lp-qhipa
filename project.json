@@ -1,0 +1,24 @@
+{
+  "name": "rimay-landing",
+  "projectType": "application",
+  "targets": {
+    "install": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/rimay-landing", "command": "npm install" }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/rimay-landing", "command": "npm run dev" }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "options": { "cwd": "apps/rimay-landing", "command": "npm run build" }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "options": { "cwd": "apps/rimay-landing", "command": "npm run lint" }
+    }
+  }
+}
