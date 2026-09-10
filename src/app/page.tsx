@@ -49,7 +49,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Qhipa",
   description: "Plataforma de orquestación para el ciclo completo de entrega de software",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://cleveritdemo.github.io/lp-qhipa",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://bookish-disco-pz48qyq.pages.github.io",
   parentOrganization: {
     "@type": "Organization",
     name: "Credicorp",

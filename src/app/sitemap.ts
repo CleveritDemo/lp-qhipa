@@ -4,7 +4,7 @@ import { ORCHESTRATOR_PATH } from "@/lib/routes";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cleveritdemo.github.io/lp-qhipa";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bookish-disco-pz48qyq.pages.github.io";
   
   return [
     {

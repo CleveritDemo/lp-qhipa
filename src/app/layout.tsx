@@ -14,7 +14,7 @@ const robotoMono = Roboto_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cleveritdemo.github.io/lp-qhipa";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bookish-disco-pz48qyq.pages.github.io";
 
 export const metadata: Metadata = {
   // Títulos
