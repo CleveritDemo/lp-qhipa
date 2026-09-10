@@ -16,7 +16,7 @@ Sin commits nuevos en upstream desde el último sync: el port valida paridad de 
 
 ## Demo
 
-[https://animated-bassoon-l6ooglq.pages.github.io/](https://animated-bassoon-l6ooglq.pages.github.io/)
+[https://cleveritdemo.github.io/lp-qhipa/](https://cleveritdemo.github.io/lp-qhipa/)
 
 ## Tech Stack
 
@@ -62,8 +62,8 @@ Sin commits nuevos en upstream desde el último sync: el port valida paridad de 
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/credicorp-internal/brd-rimay-platform.git
-cd brd-rimay-platform/apps/rimay-landing
+git clone https://github.com/CleveritDemo/lp-qhipa.git
+cd lp-qhipa
 
 # Instalar dependencias
 npm install
@@ -87,7 +87,7 @@ npm run lint     # Linter
 
 El proyecto esta configurado para deploy automatico en GitHub Pages mediante GitHub Actions.
 
-El workflow vive en la raiz del monorepo, en `.github/workflows/pages-landing.yml`, y se dispara en cada push a `main` que toque `apps/rimay-landing/**`. El workflow:
+El workflow vive en `.github/workflows/deploy-pages.yml` y se dispara en cada push a `main`. El workflow:
 1. Instala dependencias
 2. Genera build estatico
 3. Despliega a GitHub Pages
@@ -98,12 +98,12 @@ Estos pasos los debe hacer una persona con permisos de admin del repo; sin ellos
 
 1. Ir a Settings > Pages
 2. En "Build and deployment", elegir "GitHub Actions" como source
-3. Al ser un repo internal, GitHub asigna una URL privada aleatoria en `*.pages.github.io` y sirve el sitio en la raiz. No hay subruta de project page, asi que `PAGES_BASE_PATH` va vacio.
+3. Como es un project page publico, el sitio se sirve bajo `/lp-qhipa` y el workflow setea `PAGES_BASE_PATH=/lp-qhipa`.
 
 ## Estructura del Proyecto
 
 ```
-apps/rimay-landing/
+lp-qhipa/
 ├── public/
 │   └── images/
 │       ├── logotipo-qhipa.svg
@@ -141,15 +141,15 @@ Proyecto privado - Credicorp / Cleverit
 
 ## Despliegue
 
-El sitio se publica en la URL privada `https://animated-bassoon-l6ooglq.pages.github.io/` con el workflow `.github/workflows/pages-landing.yml` (raiz del monorepo), en cada push a `main` que toque `apps/rimay-landing/**`, usando el export estatico de Next (`output: "export"`).
+El sitio se publica en `https://cleveritdemo.github.io/lp-qhipa/` con el workflow `.github/workflows/deploy-pages.yml`, en cada push a `main`, usando el export estatico de Next (`output: "export"`).
 
-El sitio se sirve en la raiz del dominio, asi que `PAGES_BASE_PATH` va vacio y el build local es directo:
+Para simular GitHub Pages localmente, compila con el mismo base path del workflow:
 
 ```bash
-npm run build
+PAGES_BASE_PATH=/lp-qhipa NEXT_PUBLIC_SITE_URL=https://cleveritdemo.github.io/lp-qhipa npm run build
 ```
 
-Solo hay que setear `PAGES_BASE_PATH=/brd-rimay-platform` si el repo pasa a publico y se publica como project page bajo esa subruta.
+En desarrollo local, `PAGES_BASE_PATH` puede ir vacio para servir en la raiz.
 
 `public/.nojekyll` es obligatorio: sin el, Jekyll descarta el directorio `_next/` por empezar con guion bajo y el sitio queda sin CSS ni JS.
 

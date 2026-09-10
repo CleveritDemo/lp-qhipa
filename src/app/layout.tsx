@@ -14,7 +14,7 @@ const robotoMono = Roboto_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://credicorp-internal.github.io/brd-rimay-platform";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cleveritdemo.github.io/lp-qhipa";
 
 export const metadata: Metadata = {
   // Títulos

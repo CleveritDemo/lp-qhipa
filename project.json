@@ -4,21 +4,21 @@
   "targets": {
     "install": {
       "executor": "nx:run-commands",
-      "options": { "cwd": "apps/rimay-landing", "command": "npm install" }
+      "options": { "command": "npm install" }
     },
     "dev": {
       "executor": "nx:run-commands",
-      "options": { "cwd": "apps/rimay-landing", "command": "npm run dev" }
+      "options": { "command": "npm run dev" }
     },
     "build": {
       "executor": "nx:run-commands",
       "cache": true,
-      "options": { "cwd": "apps/rimay-landing", "command": "npm run build" }
+      "options": { "command": "npm run build" }
     },
     "lint": {
       "executor": "nx:run-commands",
       "cache": true,
-      "options": { "cwd": "apps/rimay-landing", "command": "npm run lint" }
+      "options": { "command": "npm run lint" }
     }
   }
 }
