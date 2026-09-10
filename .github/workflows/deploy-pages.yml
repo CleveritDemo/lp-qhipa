@@ -36,7 +36,8 @@ jobs:
       - name: Build static site
         run: npm run build
         env:
-          NEXT_PUBLIC_SITE_URL: https://bookish-disco-pz48qyq.pages.github.io
+          PAGES_BASE_PATH: /lp-qhipa
+          NEXT_PUBLIC_SITE_URL: https://cleveritdemo.github.io/lp-qhipa
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

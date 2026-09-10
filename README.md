@@ -16,7 +16,7 @@ Sin commits nuevos en upstream desde el último sync: el port valida paridad de 
 
 ## Demo
 
-[https://bookish-disco-pz48qyq.pages.github.io/](https://bookish-disco-pz48qyq.pages.github.io/)
+[https://cleveritdemo.github.io/lp-qhipa/](https://cleveritdemo.github.io/lp-qhipa/)
 
 ## Tech Stack
 
@@ -98,7 +98,7 @@ Estos pasos los debe hacer una persona con permisos de admin del repo; sin ellos
 
 1. Ir a Settings > Pages
 2. En "Build and deployment", elegir "GitHub Actions" como source
-3. GitHub Pages asigna la URL publicada y el sitio se sirve desde la raiz de ese dominio.
+3. Como es un project page publico, el sitio se sirve bajo `/lp-qhipa` y el workflow setea `PAGES_BASE_PATH=/lp-qhipa`.
 
 ## Estructura del Proyecto
 
@@ -141,12 +141,12 @@ Proyecto privado - Credicorp / Cleverit
 
 ## Despliegue
 
-El sitio se publica en `https://bookish-disco-pz48qyq.pages.github.io/` con el workflow `.github/workflows/deploy-pages.yml`, en cada push a `main`, usando el export estatico de Next (`output: "export"`).
+El sitio se publica en `https://cleveritdemo.github.io/lp-qhipa/` con el workflow `.github/workflows/deploy-pages.yml`, en cada push a `main`, usando el export estatico de Next (`output: "export"`).
 
-Para simular GitHub Pages localmente, compila con la misma URL publica del workflow:
+Para simular GitHub Pages localmente, compila con el mismo base path del workflow:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://bookish-disco-pz48qyq.pages.github.io npm run build
+PAGES_BASE_PATH=/lp-qhipa NEXT_PUBLIC_SITE_URL=https://cleveritdemo.github.io/lp-qhipa npm run build
 ```
 
 En desarrollo local, `PAGES_BASE_PATH` puede ir vacio para servir en la raiz.
